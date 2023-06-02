@@ -1,23 +1,29 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>r.0xyz.com</title>
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+
     <script charset="utf-8">
         const fn = function () {
             // Get the value of a URL parameter
             const urlParams = new URLSearchParams(window.location.search);
-            const myParam = urlParams.get('to');
+            const to = urlParams.get('to');
 
-            if (myParam === null) {
+            if (to === null) {
                 console.log("No URL parameter found.");
                 // set page
-                document.getElementById("main").innerHTML = "<p>No URL parameter found.</p>";
+                document.getElementById("message").innerHTML = "<p>No URL parameter found.</p>";
+                document.getElementById("message").style.display = "block";
                 return
             }
             // Redirect to the URL passed as a parameter
-            window.location.href = myParam;
+            window.location.href = to;
+            document.getElementById("to").href = to;
+            document.getElementById("to").innerHTML = to;
         };
         document.addEventListener("DOMContentLoaded", function (event) {
             fn();
@@ -25,62 +31,26 @@
     </script>
 </head>
 <body>
-    <div class="block">
-<div id="main">
-    <p>Redirecting...</p>
-</div>
-<div>
-    <hr/>
-    <pre>
-        https://r.0xyz.com/?to=https://example.com
-        https://r.0xyz.com/?to=obsidian://open?vault=yours&file=yours
-        https://r.0xyz.com/?to=slack://yours
-    </pre>
-    <p>You can find this project at <a href="https://github.com/alswl/r.0xyz.com">Github</a></p>
-</div>
+<header class="navbar">
+    <section class="navbar-section">
+        <a href="/" class="btn btn-link">r.0xyz.com</a>
+    </section>
+    <section class="navbar-center">
+        <!-- centered logo or brand -->
+    </section>
+    <section class="navbar-section">
+        <a href="https://twitter.com/alswl" class="btn btn-link">Twitter</a>
+        <a href="https://github.com/alswl/r.0xyz.com" class="btn btn-link">GitHub</a>
+    </section>
+</header>
+<div class="hero bg-gray">
+    <div class="hero-body">
+        <h1>Redirecting</h1>
+        <a id="to" href="#"></a>
     </div>
+    <div id="message" class="toast toast-warning" style="display: none">
+
+    </div>
+</div>
 </body>
-<style>
-    html {
-        box-sizing: border-box;
-        font-size: 16px;
-    }
-
-    *, *:before, *:after {
-        box-sizing: inherit;
-    }
-
-    body, h1, h2, h3, h4, h5, h6, p, ol, ul {
-        margin: 0;
-        padding: 0;
-        font-weight: normal;
-    }
-
-    ol, ul {
-        list-style: none;
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-    @media screen and (min-width: 768px) {
-  .block{
-    width: 680px;
-    background-color: yellow;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .block{
-    width: 768px;
-    background-color: blue;
-  }
-}
-@media screen and (min-width: 1580px) {
-  .block{
-    width: 1190px;
-    background-color: red;
-  }
-}
-</style>
 </html>
