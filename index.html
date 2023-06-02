@@ -1,18 +1,23 @@
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>
     <title>r.0xyz.com</title>
     <script charset="utf-8">
-      // Get the value of a URL parameter
-      const urlParams = new URLSearchParams(window.location.search);
-      const myParam = urlParams.get('to');
+        // Get the value of a URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const myParam = urlParams.get('to');
 
-      // Redirect to the URL passed as a parameter
-      window.location.href = myParam;
+        if (myParam === null) {
+            console.log("No URL parameter found.");
+            alert("No URL parameter found.");
+        }
+        // Redirect to the URL passed as a parameter
+        window.location.href = myParam;
     </script>
-  </head>
-  <body>
-    <p>Redirecting...</p>
-  </body>
+</head>
+<body>
+<p>Redirecting...</p>
+<p>You can find this project at https://github.com/alswl/r.0xyz.com</p>
+</body>
 </html>
