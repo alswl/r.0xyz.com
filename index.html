@@ -16,7 +16,6 @@
             if (to === null) {
                 console.log("No URL parameter found.");
                 // set page
-                document.getElementById("message").innerHTML = "<p>No URL parameter found.</p>";
                 document.getElementById("message").style.display = "block";
                 return
             }
@@ -49,7 +48,9 @@
         <a id="to" href="#"></a>
     </div>
     <div id="message" class="toast toast-warning" style="display: none">
-
+        <p>No URL parameter found.</p>
+        <p>Put link to <code>?to=yours-external-link</code> URL param</p>
+        <p>example: <a href="https://r.0xyz.com/?to=obsidian%3A%2F%2Fopen%3Fvault%3Dmy-ali-logs%26file%3Djournals">https://r.0xyz.com/?to=obsidian%3A%2F%2Fopen%3Fvault%3Dmy-ali-logs%26file%3Djournals</a></p>
     </div>
 </div>
 </body>
