@@ -3,21 +3,29 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width"/>
     <title>r.0xyz.com</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon"/>
     <script charset="utf-8">
-        // Get the value of a URL parameter
-        const urlParams = new URLSearchParams(window.location.search);
-        const myParam = urlParams.get('to');
+        const fn = function () {
+            // Get the value of a URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const myParam = urlParams.get('to');
 
-        if (myParam === null) {
-            console.log("No URL parameter found.");
-            alert("No URL parameter found.");
-        }
-        // Redirect to the URL passed as a parameter
-        window.location.href = myParam;
+            if (myParam === null) {
+                console.log("No URL parameter found.");
+                // set page
+                document.getElementById("main").innerHTML = "<p>No URL parameter found.</p>";
+                return
+            }
+            // Redirect to the URL passed as a parameter
+            window.location.href = myParam;
+        };
+        fn();
     </script>
 </head>
 <body>
-<p>Redirecting...</p>
-<p>You can find this project at https://github.com/alswl/r.0xyz.com</p>
+<div id="main">
+    <p>Redirecting...</p>
+    <p>You can find this project at <a href="https://github.com/alswl/r.0xyz.com">Github</a></p>
+</div>
 </body>
 </html>
