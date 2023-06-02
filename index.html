@@ -19,13 +19,48 @@
             // Redirect to the URL passed as a parameter
             window.location.href = myParam;
         };
-        fn();
+        document.addEventListener("DOMContentLoaded", function (event) {
+            fn();
+        });
     </script>
 </head>
 <body>
 <div id="main">
     <p>Redirecting...</p>
+</div>
+<div>
+    <hr/>
+    <pre>
+        https://r.0xyz.com/?to=https://example.com
+        https://r.0xyz.com/?to=obsidian://open?vault=yours&file=yours
+        https://r.0xyz.com/?to=slack://yours
+    </pre>
     <p>You can find this project at <a href="https://github.com/alswl/r.0xyz.com">Github</a></p>
 </div>
 </body>
+<style>
+    html {
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+
+    body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+        margin: 0;
+        padding: 0;
+        font-weight: normal;
+    }
+
+    ol, ul {
+        list-style: none;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
 </html>
