@@ -1,4 +1,4 @@
-# r.0xyz.com
+# universal-redirector
 
 Redirect https://r.0xyz.com/?to=$url to $url.
 
@@ -16,3 +16,7 @@ https://r.0xyz.com/?to=obsidian%3A%2F%2Fopen%3Fvault%3Dyours%26file%3Dyours
 # slack://yours
 https://r.0xyz.com/?to=slack%3A%2F%2Fyours
 ```
+
+## One more thing
+
+[universal-redirector.alfredworkflow](https://github.com/alswl/universal-redirector/blob/master/universal-redirector.alfredworkflow) is an Alfred workflow for quick access.
