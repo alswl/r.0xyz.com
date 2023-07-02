@@ -1,6 +1,8 @@
 # universal-redirector
 
-![logo](./_assets/logo.png)
+<image src="./_assets/logo.png" width="200" height="200"></image>
+
+Online: [https://r.0xyz.com](https://r.0xyz.com)
 
 Redirect any text with Universal Redirector, it supports `http(s)://`, `slack://`, `obsidian://` and any other custom schema.
 It helps you to open any link in your browser or app. You can put this links to any place, such as your notes, your bookmarks, your blog, etc.
