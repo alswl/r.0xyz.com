@@ -1,21 +1,30 @@
 # universal-redirector
 
-Redirect https://r.0xyz.com/?to=$url to $url.
+![logo](./_assets/logo.png)
 
-If I want open `obsidian://open?vault=my-logs&file=journals%2F2023%2F2023-06%2F2023-06-02` in some web editor that did not support Obsidian schema.
+Redirect any text with Universal Redirector, it supports `http(s)://`, `slack://`, `obsidian://` and any other custom schema.
+It helps you to open any link in your browser or app. You can put this links to any place, such as your notes, your bookmarks, your blog, etc.
 
-How to use:
+what is a custom schema? for example, `obsidian://` is a custom schema, it is used to open obsidian vaults and files.
+how to register a custom schema? it depends on your browser and os. for example,
+the following is a guide for macos and safari: [defining a custom url scheme for your app | apple developer documentation](https://developer.apple.com/documentation/xcode/defining-a-custom-url-scheme-for-your-app)
+
+## usage
+
+you can using [https://r.0xyz.com/new.html](https://r.0xyz.com/new.html) to create a new link. for example,
+I want to using a link to open Obsidian vaults and files, I can use the following link:
 
 ```
-# https://example.com
-https://r.0xyz.com/?to=https%3A%2F%2Fexample.com
-
-# obsidian://open?vault=yours&file=yours
-https://r.0xyz.com/?to=obsidian%3A%2F%2Fopen%3Fvault%3Dyours%26file%3Dyours
-
-# slack://yours
-https://r.0xyz.com/?to=slack%3A%2F%2Fyours
+https://r.0xyz.com/?to=obsidian%3A%2F%2Fopen%3Fvault%3Dmy-kms%26file%3Djournals%252F2014%252F2014-09%252F2014-09-03
 ```
+
+If you want to call somebody with Facetime, you can use the following link:
+
+```
+https://r.0xyz.com/?to=facetime%3A%2F%2F15555555555
+```
+
+More useful schemas your can find in [Complete List of iOS URL Schemes for Apple Apps and Services (Always-Updated) | by Justin Meyers | Medium](https://medium.com/@contact.jmeyers/complete-list-of-ios-url-schemes-for-apple-apps-and-services-always-updated-800c64f450f)
 
 ## One more thing
 
