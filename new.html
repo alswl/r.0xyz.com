@@ -1,0 +1,75 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Universal Redirector</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+
+    <script charset="utf-8">
+        const fn = function () {
+            document.getElementById("form").addEventListener("submit", function (event) {
+                event.preventDefault();
+                const to = document.getElementById("to").value;
+                const newLink = "https://r.0xyz.com/?to=" + encodeURIComponent(to);
+                const $msg = document.getElementById("message")
+                $msg.style.display = "block";
+
+                const $newLink = document.getElementById("new-link")
+                $newLink.innerText = newLink;
+                $newLink.attributes.href.value = newLink;
+            });
+
+            document.querySelectorAll('.copy').forEach(function(button) {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    $to = document.getElementById("to")
+                    $to.value = button.attributes.to.value
+                });
+            });
+        };
+        document.addEventListener("DOMContentLoaded", function (event) {
+            fn();
+        });
+    </script>
+</head>
+<body>
+<header class="navbar">
+    <section class="navbar-section">
+        <a href="/new.html" class="btn btn-link">New Link</a>
+    </section>
+    <section class="navbar-center">
+        <a href="/" class="btn btn-link">Universal Redirector</a>
+        <!-- centered logo or brand -->
+    </section>
+    <section class="navbar-section">
+        <a href="https://twitter.com/alswl" class="btn btn-link">Twitter</a>
+        <a href="https://github.com/alswl/universal-redirector" class="btn btn-link">GitHub</a>
+    </section>
+</header>
+<div class="hero bg-gray">
+    <div class="hero-body">
+        <h1>Create your link</h1>
+        <form id="form">
+            <div class="input-group">
+                <span class="input-group-addon">Link to</span>
+                <input id="to" type="text" class="form-input" placeholder="" value="">
+                <button type="submit" class="btn btn-primary input-group-btn">Submit</button>
+            </div>
+            <div class="input-group">
+                <button type="reset" class="btn btn-sm copy" to="facetime://15555555555"><i class="icon icon-plus"></i> Facetime</button>
+                <button type="reset" class="btn btn-sm copy" to="obsidian://open?vault=my-kms&file=journals%2F2014%2F2014-09%2F2014-09-03"><i class="icon icon-plus"></i> Obsidian</button>
+            </div>
+        </form>
+    </div>
+    <div id="message" class="toast toast-success" style="display: none">
+        <p>Copy your universal link:</p>
+        <p><a id="new-link" href="" target="_blank"></a>
+        </p>
+    </div>
+</div>
+</body>
+</html>
